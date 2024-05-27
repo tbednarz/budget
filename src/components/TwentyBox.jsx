@@ -33,16 +33,16 @@ const TwentyBox = ({ twenty }) => {
     setTwentyList(twentyList.filter((item) => item.id !== id));
   };
   return (
-    <div className="flex rounded-3xl flex-col text-2xl border-2 w-1/2 my-5 p-3">
+    <div className="flex flex-col rounded-3xl text-2xl border-2 w-full md:w-1/2 my-5 p-3">
       <BoxHeader
-        name="Saving"
+        name="Needs"
         percentage={((100 * twentyTotal) / twenty).toFixed(2)}
         dollarAmount={twenty}
       />
       {twenty.length === 0 ? (
-        <div>No items to display</div>
+        <div className="text-center">No items to display</div>
       ) : (
-        <ul className="w-full justify-center">
+        <ul className="w-full">
           {twentyList.map((item) => (
             <ListItem
               key={item.id}
@@ -57,7 +57,7 @@ const TwentyBox = ({ twenty }) => {
           ))}
         </ul>
       )}
-      <form className="flex flex-col items-center border-2 rounded-2xl">
+      <form className="flex flex-col items-center border-2 rounded-2xl mt-3">
         <label>
           <input
             id="name-box-saving"
@@ -76,7 +76,7 @@ const TwentyBox = ({ twenty }) => {
           />
         </label>
         <button
-          className="border-2 bg-green-200 hover:bg-green-500 border-grey-200 shadow-md rounded-lg text-lg w-12 h-auto font-bold"
+          className="border-2 bg-green-200 hover:bg-green-500 border-grey-200 shadow-md rounded-lg text-lg w-12 h-auto font-bold mt-2"
           type="button"
           onClick={handleTwentyListChange}
         >

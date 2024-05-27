@@ -33,16 +33,16 @@ const ThirtyBox = ({ thirty }) => {
     setThirtyList(thirtyList.filter((item) => item.id !== id));
   };
   return (
-    <div className="flex rounded-3xl flex-col text-2xl border-2 w-1/2 my-5 p-3">
+    <div className="flex flex-col rounded-3xl text-2xl border-2 w-full md:w-1/2 my-5 p-3">
       <BoxHeader
         name="Wants"
         percentage={((100 * thirtyTotal) / thirty).toFixed(2)}
         dollarAmount={thirty}
       />
       {thirty.length === 0 ? (
-        <div>No items to display</div>
+        <div className="text-center">No items to display</div>
       ) : (
-        <ul className="w-full justify-center">
+        <ul className="w-full">
           {thirtyList.map((item) => (
             <ListItem
               key={item.id}
@@ -57,7 +57,7 @@ const ThirtyBox = ({ thirty }) => {
           ))}
         </ul>
       )}
-      <form className="flex flex-col items-center border-2 rounded-2xl">
+      <form className="flex flex-col items-center border-2 rounded-2xl mt-3">
         <label>
           <input
             id="name-box-wants"
@@ -76,7 +76,7 @@ const ThirtyBox = ({ thirty }) => {
           />
         </label>
         <button
-          className="border-2 bg-blue-200 hover:bg-blue-500 border-grey-200 shadow-md rounded-lg text-lg w-12 h-auto font-bold"
+          className="border-2 bg-blue-200 hover:bg-blue-500 border-grey-200 shadow-md rounded-lg text-lg w-12 h-auto font-bold mt-2"
           type="button"
           onClick={handleThirtyListChange}
         >

@@ -1,7 +1,7 @@
 import BoxHeader from "./BoxHeader";
 import { useState } from "react";
 import ListItem from "./ListItem";
-const FiftyBox = ({ fifty, newIncome }) => {
+const FiftyBox = ({ fifty }) => {
   const [fiftyList, setFiftyList] = useState([]);
 
   const fiftyTotal = fiftyList.reduce((acc, item) => {
@@ -32,16 +32,16 @@ const FiftyBox = ({ fifty, newIncome }) => {
     setFiftyList(fiftyList.filter((item) => item.id !== id));
   };
   return (
-    <div className="flex rounded-3xl flex-col text-2xl border-2 w-1/2 my-5 p-3">
+    <div className="flex flex-col rounded-3xl text-2xl border-2 w-full md:w-1/2 my-5 p-3">
       <BoxHeader
         name="Needs"
         percentage={((100 * fiftyTotal) / fifty).toFixed(2)}
         dollarAmount={fifty}
       />
-      {fiftyList.length === 0 ? (
-        <div>No items to display</div>
+      {fifty.length === 0 ? (
+        <div className="text-center">No items to display</div>
       ) : (
-        <ul className="w-full justify-center">
+        <ul className="w-full">
           {fiftyList.map((item) => (
             <ListItem
               key={item.id}
@@ -49,14 +49,14 @@ const FiftyBox = ({ fifty, newIncome }) => {
               name={item.name}
               value={item.amount}
               mainbg="bg-red-100"
-              bg="bg-red-500"
+              bg="bg-red-400"
               hover="bg-red-700"
               onDelete={handleDeleteItem}
             />
           ))}
         </ul>
       )}
-      <form className="flex flex-col items-center border-2 rounded-2xl">
+      <form className="flex flex-col items-center border-2 rounded-2xl mt-3">
         <label>
           <input
             id="name-box-needs"
@@ -75,7 +75,7 @@ const FiftyBox = ({ fifty, newIncome }) => {
           />
         </label>
         <button
-          className="border-2 bg-red-200 hover:bg-red-500 border-grey-200 shadow-md rounded-lg text-lg w-12 h-auto font-bold"
+          className="border-2 bg-gray-200 hover:bg-gray-300 border-grey-200 shadow-md rounded-xl p-2 text-shadow text-lg w-20 mt-2 mb-2 font-bold"
           type="button"
           onClick={handleFiftyListChange}
         >

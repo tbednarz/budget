@@ -35,7 +35,7 @@ const FiftyBox = ({ fifty }) => {
     <div className="flex flex-col rounded-3xl text-2xl border-2 w-full md:w-1/2 my-5 p-3">
       <BoxHeader
         name="Needs"
-        percentage={((100 * fiftyTotal) / fifty).toFixed(2)}
+        percentage={"Left over: " + `${fifty - fiftyTotal}`}
         dollarAmount={fifty}
       />
       {fifty.length === 0 ? (

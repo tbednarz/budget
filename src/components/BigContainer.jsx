@@ -20,8 +20,13 @@ const BigContainer = () => {
   return (
     <div className="flex flex-col items-center p-1 w-full text-center ">
       <ol className="list-disc text-left">
-        <li>make it not display NaN when income is empty</li>
-        <li>clean up ui more, fiddle with font sizes and box sizes</li>
+        <li>make UI not disgusting to look at </li>
+        <li>
+          Display total amount used and total amount left as a grand total
+        </li>
+        <li>
+          Save data to local storage so all data is there next time you visit
+        </li>
         <li>add button to save results to pdf or to a table?</li>
       </ol>
       <AddIncomeBox

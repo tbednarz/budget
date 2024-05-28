@@ -4,9 +4,9 @@ const AddIncomeBox = ({ newIncome, setNewIncome, handleSubmitIncome }) => {
       className="flex flex-col p-1 w-full md:w-auto "
       onSubmit={handleSubmitIncome}
     >
-      <label>Add Income here</label>
+      <label className="font-bold ">Add Monthly Income here:</label>
       <input
-        className="border-2 rounded-lg text-center"
+        className="border-2 rounded-lg text-center shadow-md"
         type="number"
         value={newIncome}
         onChange={(e) => setNewIncome(e.target.value)}

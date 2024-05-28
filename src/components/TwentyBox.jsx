@@ -76,7 +76,7 @@ const TwentyBox = ({ twenty }) => {
           />
         </label>
         <button
-          className="border-2 bg-green-200 hover:bg-green-500 border-grey-200 shadow-md rounded-lg text-lg w-12 h-auto font-bold mt-2"
+          className="border-2 bg-gray-200 hover:bg-gray-300 border-grey-200 shadow-md rounded-xl p-2 text-shadow text-lg w-20 mt-2 mb-2 font-bold"
           type="button"
           onClick={handleTwentyListChange}
         >
